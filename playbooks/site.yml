@@ -2,7 +2,7 @@
 
 - hosts: all
   remote_user: root
-  pre-tasks:
+  pre_tasks:
 
   - name: install updates (Fedora)
     dnf:
@@ -18,7 +18,7 @@
 
 
 
-- hosts: web_server
+- hosts: web_servers
   remote_user: root
   tasks:
 
@@ -36,9 +36,8 @@
   tasks:
 
   - name: Install mariadb server package
-    package:
-      apt:
-        name: mariadb-server
+    apt:
+      name: mariadb-server
       state: latest
 
 
